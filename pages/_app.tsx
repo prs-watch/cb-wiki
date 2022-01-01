@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import { AppProps } from 'next/app';
-import theme from './_theme';
+import theme from '../theme/theme';
 import {
   Box,
   ChakraProvider,
