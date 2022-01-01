@@ -12,17 +12,8 @@ export const getStaticProps = async () => {
 
 const Top: NextPage<Props> = ({ markdowns }) => {
   return (
-    <ul>
-      {markdowns.map((markdown) => {
-        return (
-          <ul>
-            <li>{markdown.title}</li>
-            <li>{markdown.date}</li>
-            <li>{markdown.tags}</li>
-          </ul>
-        )
-      })}
-    </ul>
+    <>
+    </>
   )
 }
 

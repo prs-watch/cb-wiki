@@ -8,11 +8,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.7.3",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@fontsource/comic-mono": "^4.5.0",
+    "@fontsource/kaisei-opti": "^4.5.4",
+    "chakra-ui-markdown-renderer": "^4.0.0",
+    "framer-motion": "^5.5.5",
     "gray-matter": "^4.0.3",
     "next": "12.0.7",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-markdown": "^7.1.1",
     "remark": "^14.0.2",
+    "remark-gfm": "^3.0.1",
     "remark-html": "^15.0.1"
   },
   "devDependencies": {

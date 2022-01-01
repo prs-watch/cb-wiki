@@ -1,5 +1,8 @@
 import { InferGetStaticPropsType, NextPage } from "next"
-import { getAllMarkdowns, getMarkdownContent, markdownToHTML } from "../../utils/mdutils"
+import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
+import { getAllMarkdowns, getMarkdownContent } from "../../utils/mdutils"
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -20,17 +23,10 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }: any) => {
     const item = getMarkdownContent(params.path, ["path", "title", "date", "tags", "content"])
-    const content = await markdownToHTML(item.content)
 
     return {
         props: {
-            item: {
-                "path": item.path,
-                "title": item.title,
-                "date": item.date,
-                "tags": item.tags,
-                "content": content
-            }
+            item
         }
     }
 }
@@ -38,8 +34,7 @@ export const getStaticProps = async ({ params }: any) => {
 const Page: NextPage<Props> = ({ item }) => {
     return (
         <>
-            <h1>{item.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: item.content }} />
+            <ReactMarkdown components={ChakraUIRenderer()} children={item.content} remarkPlugins={[remarkGfm]} skipHtml />
         </>
     )
 }

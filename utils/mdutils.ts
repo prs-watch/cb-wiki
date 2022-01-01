@@ -52,8 +52,3 @@ export const getMarkdownContent = (path: string, fields: string[] = []) => {
 
     return item
 }
-
-export const markdownToHTML = async (content: string) => {
-    const resp = await remark().use(html).process(content)
-    return resp.toString()
-}
