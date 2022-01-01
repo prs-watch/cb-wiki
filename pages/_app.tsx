@@ -1,16 +1,20 @@
 import "../styles/globals.css"
 import { AppProps } from "next/app"
 import theme from "./_theme"
-import { Box, ChakraProvider, Heading, Text } from "@chakra-ui/react";
+import { Box, ChakraProvider, Heading, LinkBox, LinkOverlay, Text } from "@chakra-ui/react";
 
 function App({ Component, pageProps }: AppProps) {
     return (
         <ChakraProvider theme={theme}>
             <header>
-                <Heading as="h1" size="2xl" color="red">中國棒球維基</Heading>
-                <Text fontSize="md">
-                    Collection of articles about Chinese Baseball.
-                </Text>
+                <LinkBox>
+                    <LinkOverlay href="/">
+                        <Heading as="h1" size="2xl" color="red">中國棒球維基</Heading>
+                        <Text fontSize="md">
+                            Collection of articles about Chinese Baseball.
+                        </Text>
+                    </LinkOverlay>
+                </LinkBox>
             </header>
             <Component {...pageProps} />
             <footer>

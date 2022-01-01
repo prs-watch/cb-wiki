@@ -1,7 +1,20 @@
-import type { InferGetStaticPropsType, NextPage } from "next"
+import { Link, List, ListItem, ListIcon, Text, Center, Divider, Grid, GridItem } from "@chakra-ui/react";
+import type { InferGetStaticPropsType, NextPage } from "next";
 import { getAllMarkdowns } from "../utils/mdutils";
+import { CheckCircleIcon } from '@chakra-ui/icons'
+import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
+
+const topMarkdown = `
+## 概要
+
+- 中国の野球（中國棒球）について整理したwikiページです。
+- 記法は繁体字で統一。
+- メンテナンスはGitHub上で実施するため、編集リクエスト等もこちらで受け付けます。
+`
 
 export const getStaticProps = async () => {
   const markdowns = getAllMarkdowns(["path", "title", "date", "tags"])
@@ -13,6 +26,37 @@ export const getStaticProps = async () => {
 const Top: NextPage<Props> = ({ markdowns }) => {
   return (
     <>
+      <Grid templateColumns="repeat(5, 1fr)">
+        <GridItem colSpan={1}>
+          <List>
+            {
+              markdowns.map((markdown) => {
+                return (
+                  <ListItem key={markdown.path}>
+                    <Link href={markdown.path}>
+                      <Text fontSize="lg">
+                        <ListIcon as={CheckCircleIcon} color='green' />
+                        {markdown.title}
+                      </Text>
+                    </Link>
+                  </ListItem>
+                )
+              })
+            }
+          </List>
+
+        </GridItem>
+        <GridItem colSpan={1}>
+          <Center height="100%">
+            <Divider orientation="vertical" />
+          </Center>
+        </GridItem>
+        <GridItem colSpan={3}>
+          <ReactMarkdown components={ChakraUIRenderer()} remarkPlugins={[remarkGfm]} skipHtml>
+            {topMarkdown}
+          </ReactMarkdown>
+        </GridItem>
+      </Grid>
     </>
   )
 }

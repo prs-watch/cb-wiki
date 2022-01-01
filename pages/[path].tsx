@@ -1,6 +1,6 @@
 import { InferGetStaticPropsType, NextPage } from "next"
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
-import { getAllMarkdowns, getMarkdownContent } from "../../utils/mdutils"
+import { getAllMarkdowns, getMarkdownContent } from "../utils/mdutils"
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Grid, GridItem, Center, Divider, List, ListItem, ListIcon, Link, Text } from "@chakra-ui/react";
@@ -43,7 +43,7 @@ const Page: NextPage<Props> = ({ item, markdowns }) => {
                         {
                             markdowns.map((markdown) => {
                                 return (
-                                    <ListItem>
+                                    <ListItem key={markdown.path}>
                                         <Link href={markdown.path}>
                                             <Text fontSize="lg">
                                                 <ListIcon as={CheckCircleIcon} color='green.500' />
@@ -62,7 +62,9 @@ const Page: NextPage<Props> = ({ item, markdowns }) => {
                     </Center>
                 </GridItem>
                 <GridItem colSpan={3}>
-                    <ReactMarkdown components={ChakraUIRenderer()} children={item.content} remarkPlugins={[remarkGfm]} skipHtml />
+                    <ReactMarkdown components={ChakraUIRenderer()} remarkPlugins={[remarkGfm]} skipHtml>
+                        {item.content}
+                    </ReactMarkdown>
                 </GridItem>
             </Grid>
         </>
