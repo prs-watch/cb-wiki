@@ -1,10 +1,10 @@
 ---
-title: "hoge"
+title: "sample"
 date: "2022-01-01"
 tags: ["xxx"]
 ---
 
-# hoge  
+# sample  
 
 ## fuga  
 

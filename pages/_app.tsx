@@ -1,7 +1,7 @@
 import "../styles/globals.css"
 import { AppProps } from "next/app"
 import theme from "./_theme"
-import { Box, Center, ChakraProvider, Divider, Grid, GridItem, Heading, List, Text } from "@chakra-ui/react";
+import { Box, ChakraProvider, Heading, Text } from "@chakra-ui/react";
 
 function App({ Component, pageProps }: AppProps) {
     return (
@@ -12,19 +12,7 @@ function App({ Component, pageProps }: AppProps) {
                     Collection of articles about Chinese Baseball.
                 </Text>
             </header>
-            <Grid templateColumns="repeat(5, 1fr)">
-                <GridItem colSpan={1}>
-                    <p>hoge</p>
-                </GridItem>
-                <GridItem colSpan={1}>
-                    <Center height="100%">
-                        <Divider orientation="vertical" />
-                    </Center>
-                </GridItem>
-                <GridItem colSpan={3}>
-                    <Component {...pageProps} />
-                </GridItem>
-            </Grid>
+            <Component {...pageProps} />
             <footer>
                 <Box bg="red" h="30px">
                     <Text fontSize="sm" color="white">
