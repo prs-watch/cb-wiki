@@ -10,7 +10,6 @@ import {
   Divider,
   List,
   ListItem,
-  ListIcon,
   Link,
   Text,
 } from '@chakra-ui/react';
