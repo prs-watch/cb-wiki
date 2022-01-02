@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import {
   Box,
   ChakraProvider,
+  Container,
   Heading,
   LinkBox,
   LinkOverlay,
@@ -16,28 +17,32 @@ import theme from '../theme/theme';
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <ChakraProvider theme={theme}>
-      <header>
-        <LinkBox bg='red.500'>
-          <NextLink href='/' passHref>
-            <LinkOverlay href='/'>
-              <Heading as='h1' size='2xl' color='white'>
-                中國棒球維基
-              </Heading>
-              <Text fontSize='md' color='white'>
-                Collection of articles about Chinese Baseball.
-              </Text>
-            </LinkOverlay>
-          </NextLink>
-        </LinkBox>
-      </header>
-      <Component {...pageProps} />
-      <footer>
-        <Box bg='red.500' h='30px'>
-          <Text fontSize='sm' color='white'>
-            Copyright ©️ 2022 hctaw_srp All Rights Reserved.
-          </Text>
-        </Box>
-      </footer>
+      <div id='main'>
+        <header>
+          <LinkBox bg='red.500'>
+            <NextLink href='/' passHref>
+              <LinkOverlay href='/'>
+                <Heading as='h1' size='2xl' color='white'>
+                  中國棒球維基
+                </Heading>
+                <Text fontSize='md' color='white'>
+                  Collection of articles about Chinese Baseball.
+                </Text>
+              </LinkOverlay>
+            </NextLink>
+          </LinkBox>
+        </header>
+        <Container maxW='container.xl'>
+          <Component {...pageProps} />
+        </Container>
+        <footer>
+          <Box bg='red.500' h='30px'>
+            <Text fontSize='sm' color='white'>
+              Copyright ©️ 2022 hctaw_srp All Rights Reserved.
+            </Text>
+          </Box>
+        </footer>
+      </div>
     </ChakraProvider>
   );
 };
