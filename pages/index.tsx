@@ -21,9 +21,9 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 const topMarkdown = `
 ## 概要
 
-- 中国の野球（中國棒球）について整理したwikiページです。
-- 記法は繁体字で統一。
-- メンテナンスはGitHub上で実施するため、編集リクエスト等もこちらで受け付けます。
+- **中国の野球（中國棒球）**について整理したwikiページです。
+- カバー対象は国家隊・省隊・旅外・アカデミー・アマ。その他、棒球協會関連のネタも。
+- 記法は日本人の可読性を重視して、**繁体字**で統一。
 `;
 
 export const getStaticProps = async () => {
