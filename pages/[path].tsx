@@ -1,19 +1,9 @@
+import { Grid, GridItem, Center, Divider } from '@chakra-ui/react';
 import { InferGetStaticPropsType, NextPage } from 'next';
-import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
+
+import Md from '../components/md';
+import PageList from '../components/pageList';
 import { getAllMarkdowns, getMarkdownContent } from '../utils/mdutils';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import {
-  Grid,
-  GridItem,
-  Center,
-  Divider,
-  List,
-  ListItem,
-  Link,
-  Text,
-} from '@chakra-ui/react';
-import NextLink from 'next/link';
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -54,19 +44,7 @@ const Page: NextPage<Props> = ({ item, markdowns }) => {
     <>
       <Grid templateColumns='repeat(5, 1fr)'>
         <GridItem colSpan={1}>
-          <List>
-            {markdowns.map((markdown) => {
-              return (
-                <ListItem key={markdown.path}>
-                  <NextLink href={markdown.path} passHref>
-                    <Link>
-                      <Text fontSize='lg'>{markdown.title}</Text>
-                    </Link>
-                  </NextLink>
-                </ListItem>
-              );
-            })}
-          </List>
+          <PageList markdowns={markdowns} />
         </GridItem>
         <GridItem colSpan={1}>
           <Center height='100%'>
@@ -74,13 +52,7 @@ const Page: NextPage<Props> = ({ item, markdowns }) => {
           </Center>
         </GridItem>
         <GridItem colSpan={3}>
-          <ReactMarkdown
-            components={ChakraUIRenderer()}
-            remarkPlugins={[remarkGfm]}
-            skipHtml
-          >
-            {item.content}
-          </ReactMarkdown>
+          <Md content={item.content} />
         </GridItem>
       </Grid>
     </>

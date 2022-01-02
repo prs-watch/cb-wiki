@@ -1,21 +1,13 @@
 // markdownサポートUtils
-import { join } from 'path';
 import fs from 'fs';
+import { join } from 'path';
+
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
+
+import { Item } from '../types/Item';
 
 // 定数
 const contentsParent = join(process.cwd(), 'contents');
-
-// markdown情報型
-type Item = {
-  path: string;
-  title: string;
-  date: string;
-  tags: string[];
-  content: string;
-};
 
 // markdown配置先パスを取得
 // 構成としては、ディレクトリ＝タイトル、ページは一律index.mdとする（GitBookと同等）

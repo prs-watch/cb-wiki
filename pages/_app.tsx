@@ -1,6 +1,4 @@
 import '../styles/globals.css';
-import { AppProps } from 'next/app';
-import theme from '../theme/theme';
 import {
   Box,
   ChakraProvider,
@@ -9,7 +7,10 @@ import {
   LinkOverlay,
   Text,
 } from '@chakra-ui/react';
+import { AppProps } from 'next/app';
 import NextLink from 'next/link';
+
+import theme from '../theme/theme';
 
 function App({ Component, pageProps }: AppProps) {
   return (
