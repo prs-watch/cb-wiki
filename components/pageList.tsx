@@ -31,8 +31,15 @@ const PageList = (props: Props) => {
 
   return (
     <>
-      <Input value={value} placeholder='検索' onChange={handleOnChange} />
-      <Center h='30px'>
+      <Center h='3em'>
+        <Input
+          width='70%'
+          value={value}
+          placeholder='検索'
+          onChange={handleOnChange}
+        />
+      </Center>
+      <Center h='3em'>
         <Divider orientation='horizontal' />
       </Center>
       <List spacing={5}>

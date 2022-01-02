@@ -1,4 +1,4 @@
-import { Grid, GridItem, Center, Divider } from '@chakra-ui/react';
+import { Grid, GridItem, Heading, Box } from '@chakra-ui/react';
 import { InferGetStaticPropsType, NextPage } from 'next';
 
 import Md from '../components/md';
@@ -41,12 +41,14 @@ export const getStaticProps = async ({ params }: any) => {
 const Page: NextPage<Props> = ({ item, markdowns }) => {
   return (
     <>
-      <Grid templateColumns='repeat(12, 1fr)'>
-        <GridItem colSpan={2}>
+      <Grid templateColumns='repeat(13, 1fr)'>
+        <GridItem colSpan={3}>
           <PageList markdowns={markdowns} />
         </GridItem>
         <GridItem colSpan={1} />
         <GridItem colSpan={9}>
+          <Heading size='3xl'>{item.title}</Heading>
+          <Box h='3em' />
           <Md content={item.content} />
         </GridItem>
       </Grid>
