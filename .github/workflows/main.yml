@@ -21,6 +21,8 @@ jobs:
       
       - name: build nextjs app
         run: npm run build
+        env:
+          URL_PREFIX: cb-wiki
       
       - name: export nextjs app
         run: npm run export
