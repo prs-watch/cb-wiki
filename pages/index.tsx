@@ -2,7 +2,6 @@ import {
   Link,
   List,
   ListItem,
-  ListIcon,
   Text,
   Center,
   Divider,
