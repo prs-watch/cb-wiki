@@ -3,10 +3,12 @@ import NextLink from 'next/link';
 
 import { Item } from '../types/Item';
 
+// プロパティ型
 type Props = {
   markdowns: Item[];
 };
 
+// サイドメニューのページリストコンポーネント
 const PageList = (props: Props) => {
   return (
     <List>

@@ -12,7 +12,8 @@ import NextLink from 'next/link';
 
 import theme from '../theme/theme';
 
-function App({ Component, pageProps }: AppProps) {
+// Next.jsのApp
+const App = ({ Component, pageProps }: AppProps) => {
   return (
     <ChakraProvider theme={theme}>
       <header>

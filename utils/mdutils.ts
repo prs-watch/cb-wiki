@@ -1,4 +1,3 @@
-// markdownサポートUtils
 import fs from 'fs';
 import { join } from 'path';
 
@@ -7,6 +6,7 @@ import matter from 'gray-matter';
 import { Item } from '../types/Item';
 
 // 定数
+// markdown配置先親ディレクトリ
 const contentsParent = join(process.cwd(), 'contents');
 
 // markdown配置先パスを取得
@@ -18,6 +18,7 @@ const getMarkdownDirs = () => {
     .map(({ name }) => name);
 };
 
+// 全てのmarkdownコンテンツを取得
 export const getAllMarkdowns = (fields: string[] = []) => {
   const markdownDirs = getMarkdownDirs();
   return markdownDirs.map((dir) => {
@@ -25,7 +26,7 @@ export const getAllMarkdowns = (fields: string[] = []) => {
   });
 };
 
-// markdown（contents/XXX/index.md）の中身を取得
+// 単一markdownコンテンツを取得
 export const getMarkdownContent = (path: string, fields: string[] = []) => {
   const markdown = fs.readFileSync(
     join(contentsParent, path, 'index.md'),

@@ -5,8 +5,11 @@ import Md from '../components/md';
 import PageList from '../components/pageList';
 import { getAllMarkdowns } from '../utils/mdutils';
 
+// ページのprops型
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
+// トップページコンテンツ
+// ファイルで外出しする必要も薄いため、index.tsx上で一括管理
 const topMarkdown = `
 ## 概要
 
@@ -15,6 +18,7 @@ const topMarkdown = `
 - 記法は日本人の可読性を重視して、**繁体字**で統一。
 `;
 
+// 静的リソース生成のためのプロパティ取得
 export const getStaticProps = async () => {
   const markdowns = getAllMarkdowns(['path', 'title', 'date', 'tags']);
   return {
@@ -22,6 +26,7 @@ export const getStaticProps = async () => {
   };
 };
 
+// トップページコンテンツ
 const Top: NextPage<Props> = ({ markdowns }) => {
   return (
     <>

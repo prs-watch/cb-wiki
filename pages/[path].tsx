@@ -5,8 +5,10 @@ import Md from '../components/md';
 import PageList from '../components/pageList';
 import { getAllMarkdowns, getMarkdownContent } from '../utils/mdutils';
 
+// ページのprops型
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
+// 静的リソース生成のためのパス取得
 export const getStaticPaths = async () => {
   const markdowns = getAllMarkdowns(['path']);
 
@@ -22,6 +24,7 @@ export const getStaticPaths = async () => {
   };
 };
 
+// 静的リソース生成のためのプロパティ取得
 export const getStaticProps = async ({ params }: any) => {
   const item = getMarkdownContent(params.path, [
     'path',
@@ -39,6 +42,8 @@ export const getStaticProps = async ({ params }: any) => {
   };
 };
 
+// markdownレンダリングページ
+// ダイナミックルーティングをして、markdownリソースを取得する
 const Page: NextPage<Props> = ({ item, markdowns }) => {
   return (
     <>
