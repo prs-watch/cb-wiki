@@ -47,7 +47,7 @@ const Page: NextPage<Props> = ({ item, markdowns }) => {
         </GridItem>
         <GridItem colSpan={1} />
         <GridItem colSpan={9}>
-          <Heading size='3xl'>{item.title}</Heading>
+          <Heading size='2xl'>{item.title}</Heading>
           <Box h='3em' />
           <Md content={item.content} />
         </GridItem>
