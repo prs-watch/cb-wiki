@@ -9,6 +9,7 @@ import {
   Divider,
   ListIcon,
 } from '@chakra-ui/react';
+import NextLink from 'next/link';
 import React from 'react';
 
 import { Item } from '../types/Item';
@@ -40,17 +41,23 @@ const PageList = (props: Props) => {
             if (value === '') {
               return true;
             }
-            return markdown.title.indexOf(value) !== -1;
+            // タイトル & 全文検索
+            return (
+              markdown.title.indexOf(value) !== -1 ||
+              markdown.content.indexOf(value) !== -1
+            );
           })
           .map((markdown) => {
             return (
               <ListItem key={markdown.path}>
-                <Link href={markdown.path}>
-                  <Text textStyle='bold' fontSize='xl'>
-                    <ListIcon as={CheckCircleIcon} color='green' />
-                    {markdown.title}
-                  </Text>
-                </Link>
+                <NextLink href={markdown.path} passHref>
+                  <Link>
+                    <Text textStyle='bold' fontSize='xl'>
+                      <ListIcon as={CheckCircleIcon} color='green' />
+                      {markdown.title}
+                    </Text>
+                  </Link>
+                </NextLink>
               </ListItem>
             );
           })}

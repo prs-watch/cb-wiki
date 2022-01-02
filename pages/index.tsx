@@ -20,7 +20,7 @@ const topMarkdown = `
 
 // 静的リソース生成のためのプロパティ取得
 export const getStaticProps = async () => {
-  const markdowns = getAllMarkdowns(['path', 'title', 'date', 'tags']);
+  const markdowns = getAllMarkdowns(['path', 'title', 'content']);
   return {
     props: { markdowns },
   };
