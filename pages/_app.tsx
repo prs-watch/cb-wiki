@@ -9,7 +9,7 @@ import {
   LinkOverlay,
   Text,
 } from '@chakra-ui/react';
-import NextLink from 'next/link'
+import NextLink from 'next/link';
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -36,7 +36,7 @@ function App({ Component, pageProps }: AppProps) {
           </Text>
         </Box>
       </footer>
-    </ChakraProvider >
+    </ChakraProvider>
   );
 }
 

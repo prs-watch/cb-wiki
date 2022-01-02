@@ -14,7 +14,7 @@ import {
   Link,
   Text,
 } from '@chakra-ui/react';
-import NextLink from 'next/link'
+import NextLink from 'next/link';
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 

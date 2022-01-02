@@ -14,7 +14,7 @@ import { getAllMarkdowns } from '../utils/mdutils';
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import NextLink from 'next/link'
+import NextLink from 'next/link';
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
