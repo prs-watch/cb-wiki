@@ -14,6 +14,7 @@ import { getAllMarkdowns } from '../utils/mdutils';
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import NextLink from 'next/link'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -41,9 +42,11 @@ const Top: NextPage<Props> = ({ markdowns }) => {
             {markdowns.map((markdown) => {
               return (
                 <ListItem key={markdown.path}>
-                  <Link href={markdown.path}>
-                    <Text fontSize='lg'>{markdown.title}</Text>
-                  </Link>
+                  <NextLink href={markdown.path} passHref>
+                    <Link>
+                      <Text fontSize='lg'>{markdown.title}</Text>
+                    </Link>
+                  </NextLink>
                 </ListItem>
               );
             })}

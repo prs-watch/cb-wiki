@@ -14,6 +14,7 @@ import {
   Link,
   Text,
 } from '@chakra-ui/react';
+import NextLink from 'next/link'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -58,9 +59,11 @@ const Page: NextPage<Props> = ({ item, markdowns }) => {
             {markdowns.map((markdown) => {
               return (
                 <ListItem key={markdown.path}>
-                  <Link href={markdown.path}>
-                    <Text fontSize='lg'>{markdown.title}</Text>
-                  </Link>
+                  <NextLink href={markdown.path} passHref>
+                    <Link>
+                      <Text fontSize='lg'>{markdown.title}</Text>
+                    </Link>
+                  </NextLink>
                 </ListItem>
               );
             })}
