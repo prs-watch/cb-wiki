@@ -1,12 +1,10 @@
 ---
-title: "sample"
-date: "2022-01-01"
-tags: ["xxx"]
+title: 'sample'
 ---
 
-# sample  
+# sample
 
-## fuga  
+## fuga
 
 - 1
 - 2
@@ -18,6 +16,6 @@ YYY
 ZZZ
 ```
 
-|hoge|fuga|
-|:--|:--:|
-|xxx|yyy|
+| hoge | fuga |
+| :--- | :--: |
+| xxx  | yyy  |

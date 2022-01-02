@@ -1,7 +1,5 @@
 ---
-title: "sample2"
-date: "2022-01-01"
-tags: ["yyy"]
+title: 'sample2'
 ---
 
 # sample2
