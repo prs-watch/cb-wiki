@@ -10,11 +10,13 @@
     "export": "next export"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.1.1",
     "@chakra-ui/react": "^1.7.3",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@fontsource/comic-mono": "^4.5.0",
     "@fontsource/kaisei-opti": "^4.5.4",
+    "@fontsource/noto-sans-jp": "^4.5.2",
     "chakra-ui-markdown-renderer": "^4.0.0",
     "framer-motion": "^5.5.5",
     "gray-matter": "^4.0.3",

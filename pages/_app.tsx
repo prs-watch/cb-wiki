@@ -8,7 +8,6 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { AppProps } from 'next/app';
-import NextLink from 'next/link';
 
 import theme from '../theme/theme';
 
@@ -18,16 +17,14 @@ const App = ({ Component, pageProps }: AppProps) => {
     <ChakraProvider theme={theme}>
       <header>
         <LinkBox>
-          <NextLink href='/' passHref>
-            <LinkOverlay>
-              <Heading as='h1' size='2xl' color='red'>
-                中國棒球維基
-              </Heading>
-              <Text fontSize='md'>
-                Collection of articles about Chinese Baseball.
-              </Text>
-            </LinkOverlay>
-          </NextLink>
+          <LinkOverlay href='/'>
+            <Heading as='h1' size='2xl' color='red'>
+              中國棒球維基
+            </Heading>
+            <Text fontSize='md'>
+              Collection of articles about Chinese Baseball.
+            </Text>
+          </LinkOverlay>
         </LinkBox>
       </header>
       <Component {...pageProps} />
@@ -40,6 +37,6 @@ const App = ({ Component, pageProps }: AppProps) => {
       </footer>
     </ChakraProvider>
   );
-}
+};
 
 export default App;

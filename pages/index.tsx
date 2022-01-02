@@ -30,8 +30,8 @@ export const getStaticProps = async () => {
 const Top: NextPage<Props> = ({ markdowns }) => {
   return (
     <>
-      <Grid templateColumns='repeat(5, 1fr)'>
-        <GridItem colSpan={1}>
+      <Grid templateColumns='repeat(13, 1fr)'>
+        <GridItem colSpan={3}>
           <PageList markdowns={markdowns} />
         </GridItem>
         <GridItem colSpan={1}>
@@ -39,7 +39,7 @@ const Top: NextPage<Props> = ({ markdowns }) => {
             <Divider orientation='vertical' />
           </Center>
         </GridItem>
-        <GridItem colSpan={3}>
+        <GridItem colSpan={9}>
           <Md content={topMarkdown} />
         </GridItem>
       </Grid>
