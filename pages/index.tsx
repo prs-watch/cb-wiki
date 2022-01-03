@@ -1,11 +1,4 @@
-import {
-  Box,
-  Center,
-  Divider,
-  Grid,
-  GridItem,
-  Heading,
-} from '@chakra-ui/react';
+import { Box, Grid, GridItem, Heading } from '@chakra-ui/react';
 import type { InferGetStaticPropsType, NextPage } from 'next';
 
 import Md from '../components/md';
