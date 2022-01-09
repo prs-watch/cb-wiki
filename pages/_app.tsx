@@ -2,14 +2,17 @@ import '../styles/globals.css';
 import {
   Box,
   ChakraProvider,
-  Container,
+  Grid,
+  GridItem,
   Heading,
-  LinkBox,
-  LinkOverlay,
+  HStack,
+  Icon,
+  Link,
   Text,
 } from '@chakra-ui/react';
 import { AppProps } from 'next/app';
 import NextLink from 'next/link';
+import { BsGithub, BsTwitter } from 'react-icons/bs';
 
 import theme from '../theme/theme';
 
@@ -19,18 +22,28 @@ const App = ({ Component, pageProps }: AppProps) => {
     <ChakraProvider theme={theme}>
       <div id='main'>
         <header>
-          <LinkBox bg='red.500'>
-            <NextLink href='/' passHref>
-              <LinkOverlay href='/'>
-                <Heading as='h1' size='2xl' color='white'>
+          <Grid bg='red.500' templateColumns='repeat(10, 1fr)'>
+            <GridItem colSpan={9} px={50}>
+              <Heading as='h1' size='2xl' color='white'>
+                <NextLink href='/' passHref>
                   中國棒球維基
-                </Heading>
-                <Text fontSize='md' color='white'>
-                  Collection of articles about Chinese Baseball.
-                </Text>
-              </LinkOverlay>
-            </NextLink>
-          </LinkBox>
+                </NextLink>
+              </Heading>
+              <Text fontSize='md' color='white'>
+                Collection of articles about Chinese Baseball
+              </Text>
+            </GridItem>
+            <GridItem colSpan={1}>
+              <HStack h='100%' spacing={10} align='center'>
+                <Link href='https://twitter.com/hctaw_srp' isExternal>
+                  <Icon as={BsTwitter} boxSize={10} color='white' />
+                </Link>
+                <Link href='https://github.com/prs-watch/cb-wiki' isExternal>
+                  <Icon as={BsGithub} boxSize={10} color='white' />
+                </Link>
+              </HStack>
+            </GridItem>
+          </Grid>
         </header>
         <Component {...pageProps} />
         <footer>

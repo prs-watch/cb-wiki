@@ -4,6 +4,8 @@ import emoji from 'emoji-dictionary';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
+import style from '../styles/markdown.module.css';
+
 // プロパティ型
 type Props = {
   content: string;
@@ -21,6 +23,7 @@ const Md = (props: Props) => {
     <ReactMarkdown
       components={ChakraUIRenderer()}
       remarkPlugins={[remarkGfm]}
+      className={style.markdown}
       skipHtml
     >
       {content}
