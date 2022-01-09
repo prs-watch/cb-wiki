@@ -53,6 +53,8 @@ const App = ({ Component, pageProps }: AppProps) => {
           content='/favicons/browserconfig.xml'
         />
         <meta name='theme-color' content='#ffffff' />
+        <meta name='twitter:card' content='summary' />
+        <meta name='twitter:title' content='中國棒球維基' />
       </Head>
       <div id='main'>
         <header>
