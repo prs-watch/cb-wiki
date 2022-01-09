@@ -12,11 +12,11 @@ type Props = {
 const Layout = ({ item, markdowns }: Props) => {
   return (
     <>
-      <Grid templateColumns='repeat(12, 1fr)'>
-        <GridItem colSpan={2} p={10}>
+      <Grid templateColumns='repeat(3, 1fr)'>
+        <GridItem colSpan={1} p={10}>
           <SideMenu markdowns={markdowns} />
         </GridItem>
-        <GridItem colSpan={10} bg='white' p={10}>
+        <GridItem colSpan={2} bg='white' p={10}>
           <Heading size='2xl'>{item.title}</Heading>
           <Center h='3em'>
             <Divider orientation='horizontal' />
