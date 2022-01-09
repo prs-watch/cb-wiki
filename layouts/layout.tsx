@@ -1,4 +1,5 @@
-import { Grid, GridItem, Heading, Center, Divider } from '@chakra-ui/react';
+import { Grid, GridItem, Heading, Center, Divider, Box } from '@chakra-ui/react';
+import { isMobile } from 'react-device-detect';
 
 import Md from '../components/md';
 import SideMenu from '../components/sideMenu';
@@ -10,7 +11,19 @@ type Props = {
 };
 
 const Layout = ({ item, markdowns }: Props) => {
-  return (
+  return isMobile ? (
+    <>
+      <Center bg='white' p={5}>
+        <Heading size='2xl'>{item.title}</Heading>
+      </Center>
+      <Center bg='white' p={5}>
+        <Md content={item.content} />
+      </Center>
+      <Box w='100%' p={10}>
+        <SideMenu markdowns={markdowns} />
+      </Box>
+    </>
+  ) : (
     <>
       <Grid templateColumns='repeat(3, 1fr)'>
         <GridItem colSpan={1} p={10}>
