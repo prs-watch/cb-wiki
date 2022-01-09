@@ -11,8 +11,8 @@ const theme = extendTheme({
   textStyles: {
     bold: {
       fontWeight: 'bold',
-    }
-  }
+    },
+  },
 });
 
 export default theme;

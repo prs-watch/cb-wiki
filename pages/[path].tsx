@@ -24,7 +24,12 @@ export const getStaticPaths = async () => {
 
 // 静的リソース生成のためのプロパティ取得
 export const getStaticProps = async ({ params }: any) => {
-  const item = getMarkdownContent(params.path, ['path', 'title', 'status', 'content']);
+  const item = getMarkdownContent(params.path, [
+    'path',
+    'title',
+    'status',
+    'content',
+  ]);
 
   return {
     props: {

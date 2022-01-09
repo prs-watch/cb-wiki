@@ -1,4 +1,11 @@
-import { Grid, GridItem, Heading, Center, Divider, Box } from '@chakra-ui/react';
+import {
+  Grid,
+  GridItem,
+  Heading,
+  Center,
+  Divider,
+  Box,
+} from '@chakra-ui/react';
 import { isMobile } from 'react-device-detect';
 
 import Md from '../components/md';

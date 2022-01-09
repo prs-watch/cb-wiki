@@ -71,7 +71,11 @@ const SideMenu = (props: Props) => {
                               ? CheckCircleIcon
                               : WarningTwoIcon
                           }
-                          color={markdown.status === 'close' ? 'green.500' : 'red.500'}
+                          color={
+                            markdown.status === 'close'
+                              ? 'green.500'
+                              : 'red.500'
+                          }
                         />
                         {markdown.title}
                       </Text>
