@@ -59,7 +59,6 @@ const App = ({ Component, pageProps }: AppProps) => {
           name='twitter:description'
           content='Collection of articles about Chinese Baseball'
         />
-        <meta name='twitter:image' content='/images/card.png' />
       </Head>
       <div id='main'>
         <header>
