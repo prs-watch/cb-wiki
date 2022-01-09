@@ -55,6 +55,11 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name='theme-color' content='#ffffff' />
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:title' content='中國棒球維基' />
+        <meta
+          name='twitter:description'
+          content='Collection of articles about Chinese Baseball'
+        />
+        <meta name='twitter:image' content='/images/card.png' />
       </Head>
       <div id='main'>
         <header>
