@@ -17,7 +17,7 @@ const Layout = ({ item, markdowns }: Props) => {
           <SideMenu markdowns={markdowns} />
         </GridItem>
         <GridItem colSpan={10} bg='white' p={10}>
-          <Heading size='lg'>{item.title}</Heading>
+          <Heading size='2xl'>{item.title}</Heading>
           <Center h='3em'>
             <Divider orientation='horizontal' />
           </Center>

@@ -1,4 +1,4 @@
-import { CheckCircleIcon } from '@chakra-ui/icons';
+import { CheckCircleIcon, WarningTwoIcon } from '@chakra-ui/icons';
 import {
   List,
   ListItem,
@@ -34,10 +34,10 @@ const SideMenu = (props: Props) => {
 
   return (
     <>
-      <Center h='5em'>
+      <Center h='3em'>
         <Heading size='md'>記事一覧</Heading>
       </Center>
-      <Center h='3em'>
+      <Center h='5em'>
         <Input
           width='70%'
           value={value}
@@ -65,7 +65,14 @@ const SideMenu = (props: Props) => {
                   <NextLink href={markdown.path} passHref>
                     <Link>
                       <Text textStyle='bold' fontSize='sm'>
-                        <ListIcon as={CheckCircleIcon} color='green' />
+                        <ListIcon
+                          as={
+                            markdown.status === 'close'
+                              ? CheckCircleIcon
+                              : WarningTwoIcon
+                          }
+                          color={markdown.status === 'close' ? 'green.500' : 'red.500'}
+                        />
                         {markdown.title}
                       </Text>
                     </Link>
@@ -82,7 +89,7 @@ const SideMenu = (props: Props) => {
         <Heading size='md'>外部リンク</Heading>
       </Center>
       <Center>
-        <List spacing={5}>
+        <List spacing={3}>
           {Links.map((link) => {
             return (
               <ListItem key={link.url}>

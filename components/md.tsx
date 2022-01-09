@@ -21,7 +21,7 @@ const Md = (props: Props) => {
     <ReactMarkdown
       components={ChakraUIRenderer()}
       remarkPlugins={[remarkGfm]}
-      className='markdown-body'
+      className='markdown'
       skipHtml
     >
       {content}

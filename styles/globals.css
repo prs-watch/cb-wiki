@@ -1,3 +1,4 @@
+/* 全体 */
 header h1 {
   font-family: 'Kaisei Opti' !important;
 }
@@ -16,12 +17,11 @@ footer {
   background-color: #f6f6f6;
 }
 
-.markdown-body {
-  font-family: 'Kiwi Maru' !important;
-  background-color: white !important;
-  color: black !important;
+/* markdown */
+.markdown h3, h4, h5, h6 {
+  margin-top: 2em;
 }
 
-.markdown-body pre {
-  background-color: #f6f6f6 !important;
+.markdown a {
+  color: #3182ce;
 }
