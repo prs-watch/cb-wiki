@@ -1,8 +1,6 @@
-import { Box, Grid, GridItem, Heading } from '@chakra-ui/react';
 import type { InferGetStaticPropsType, NextPage } from 'next';
 
-import Md from '../components/md';
-import PageList from '../components/pageList';
+import Layout from '../layouts/layout';
 import { getAllMarkdowns, getMarkdownContent } from '../utils/mdutils';
 
 // ページのprops型
@@ -25,17 +23,7 @@ export const getStaticProps = async () => {
 const Top: NextPage<Props> = ({ item, markdowns }) => {
   return (
     <>
-      <Grid templateColumns='repeat(13, 1fr)'>
-        <GridItem boxShadow='2xl' colSpan={3}>
-          <PageList markdowns={markdowns} />
-        </GridItem>
-        <GridItem colSpan={1} />
-        <GridItem colSpan={9}>
-          <Heading size='2xl'>{item.title}</Heading>
-          <Box h='3em' />
-          <Md content={item.content} />
-        </GridItem>
-      </Grid>
+      <Layout item={item} markdowns={markdowns} />
     </>
   );
 };

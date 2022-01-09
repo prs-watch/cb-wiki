@@ -32,12 +32,10 @@ const App = ({ Component, pageProps }: AppProps) => {
             </NextLink>
           </LinkBox>
         </header>
-        <Container maxW='container.xl'>
-          <Component {...pageProps} />
-        </Container>
+        <Component {...pageProps} />
         <footer>
-          <Box bg='red.500' h='30px'>
-            <Text fontSize='sm' color='white'>
+          <Box h='30px'>
+            <Text fontSize='sm'>
               Copyright ©️ 2022 hctaw_srp All Rights Reserved.
             </Text>
           </Box>
