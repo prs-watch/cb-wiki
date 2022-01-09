@@ -15,3 +15,13 @@ footer {
   padding-bottom: 5em;
   background-color: #f6f6f6;
 }
+
+.markdown-body {
+  font-family: 'Kiwi Maru' !important;
+  background-color: white !important;
+  color: black !important;
+}
+
+.markdown-body pre {
+  background-color: #f6f6f6 !important;
+}

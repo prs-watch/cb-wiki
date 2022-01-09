@@ -13,6 +13,7 @@ import {
 import { AppProps } from 'next/app';
 import NextLink from 'next/link';
 import { BsGithub, BsTwitter } from 'react-icons/bs';
+import '../node_modules/github-markdown-css/github-markdown.css';
 
 import theme from '../theme/theme';
 
