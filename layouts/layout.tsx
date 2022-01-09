@@ -13,8 +13,12 @@ type Props = {
 const Layout = ({ item, markdowns }: Props) => {
   return isMobile ? (
     <>
-      <Center bg='white' p={5}>
+      <Box></Box>
+      <Center bg='white' h='3em'>
         <Heading size='2xl'>{item.title}</Heading>
+      </Center>
+      <Center bg='white' h='3em'>
+        <Divider orientation='horizontal' />
       </Center>
       <Center bg='white' p={5}>
         <Md content={item.content} />
