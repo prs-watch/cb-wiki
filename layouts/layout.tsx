@@ -6,7 +6,7 @@ import {
   Divider,
   Box,
 } from '@chakra-ui/react';
-import { isMobile } from 'react-device-detect';
+import { isMobileOnly } from 'react-device-detect';
 
 import Md from '../components/md';
 import SideMenu from '../components/sideMenu';
@@ -18,7 +18,7 @@ type Props = {
 };
 
 const Layout = ({ item, markdowns }: Props) => {
-  return isMobile ? (
+  return isMobileOnly ? (
     <>
       <Box></Box>
       <Center bg='white' h='3em'>
