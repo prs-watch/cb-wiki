@@ -1,13 +1,12 @@
 import { extendTheme } from '@chakra-ui/react';
 import '@fontsource/kaisei-opti';
-import '@fontsource/comic-mono';
-import '@fontsource/noto-sans-jp'
+import '@fontsource/kiwi-maru';
 
 // chakra-uiのテーマ拡張
 const theme = extendTheme({
   fonts: {
-    heading: 'Noto Sans JP',
-    body: 'Noto Sans JP',
+    heading: 'Kiwi Maru',
+    body: 'Kiwi Maru',
   },
   textStyles: {
     bold: {
