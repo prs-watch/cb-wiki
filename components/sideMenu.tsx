@@ -58,6 +58,12 @@ const SideMenu = (props: Props) => {
                 markdown.content.indexOf(value) !== -1
               );
             })
+            // ステータス順でソート
+            .sort((f, s) => {
+              if (f.status < s.status) return -1
+              if (f.status > s.status) return 1
+              return 0
+            })
             .map((markdown) => {
               return (
                 <ListItem key={markdown.path}>
