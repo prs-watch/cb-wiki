@@ -19,14 +19,18 @@ footer {
 
 /* markdown */
 .markdown h3,
-h4,
-h5,
-h6 {
+.markdown h4,
+.markdown h5,
+.markdown h6 {
   margin-top: 2em;
 }
 
 .markdown a {
   color: #3182ce;
+}
+
+.markdown table {
+  margin:2em 0em;
 }
 
 .markdown table, .markdown thead, .markdown tbody, .markdown tr, .markdown td, .markdown th {
@@ -43,4 +47,5 @@ h6 {
 
 .markdown img {
   border: 1px solid #333;
+  margin: 2em 0em;
 }
