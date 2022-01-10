@@ -47,11 +47,11 @@ const Layout = ({ item, markdowns }: Props) => {
     </>
   ) : (
     <>
-      <Grid templateColumns='repeat(3, 1fr)'>
+      <Grid templateColumns='repeat(4, 1fr)'>
         <GridItem colSpan={1} p={10}>
           <SideMenu markdowns={markdowns} />
         </GridItem>
-        <GridItem colSpan={2} bg='white' p={10}>
+        <GridItem colSpan={3} bg='white' p={10}>
           <Heading size='2xl'>{item.title}</Heading>
           {item.status === 'wip' && (
             <Box bg='yellow.300' h='4em' p={5} m={5}>
