@@ -22,8 +22,15 @@ export const getStaticPaths = async () => {
   };
 };
 
+// 動的遷移時のパスパラメータ型
+type DynamicParams = {
+  params: {
+    path: string;
+  }
+}
+
 // 静的リソース生成のためのプロパティ取得
-export const getStaticProps = async ({ params }: any) => {
+export const getStaticProps = async ({ params }: DynamicParams) => {
   const item = getMarkdownContent(params.path, [
     'path',
     'title',
