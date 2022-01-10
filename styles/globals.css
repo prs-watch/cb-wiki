@@ -28,3 +28,19 @@ h6 {
 .markdown a {
   color: #3182ce;
 }
+
+.markdown table, .markdown thead, .markdown tbody, .markdown tr, .markdown td, .markdown th {
+  border: 1px solid #333;
+}
+
+.markdown thead {
+  background-color: #f6f6f6;
+}
+
+.markdown thead th {
+  font-size: 16px;
+}
+
+.markdown img {
+  border: 1px solid #333;
+}
