@@ -8,7 +8,6 @@ import {
   Center,
   Divider,
   ListIcon,
-  Box,
   Heading,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
