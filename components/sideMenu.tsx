@@ -74,7 +74,7 @@ const SideMenu = (props: Props) => {
                           color={
                             markdown.status === 'close'
                               ? 'green.500'
-                              : 'red.500'
+                              : 'yellow.300'
                           }
                         />
                         {markdown.title}

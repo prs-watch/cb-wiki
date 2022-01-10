@@ -5,8 +5,11 @@ import {
   Center,
   Divider,
   Box,
+  Text,
+  Icon
 } from '@chakra-ui/react';
 import { isMobileOnly } from 'react-device-detect';
+import { TiWarningOutline } from 'react-icons/ti';
 
 import Md from '../components/md';
 import SideMenu from '../components/sideMenu';
@@ -24,6 +27,14 @@ const Layout = ({ item, markdowns }: Props) => {
       <Center bg='white' h='3em'>
         <Heading size='2xl'>{item.title}</Heading>
       </Center>
+      {item.status === 'wip' && (
+        <Box bg='yellow.300' h='4em' p={5}>
+          <Text>
+            <Icon as={TiWarningOutline} />
+            このページは編集中です。
+          </Text>
+        </Box>
+      )}
       <Center bg='white' h='3em'>
         <Divider orientation='horizontal' />
       </Center>
@@ -42,6 +53,14 @@ const Layout = ({ item, markdowns }: Props) => {
         </GridItem>
         <GridItem colSpan={2} bg='white' p={10}>
           <Heading size='2xl'>{item.title}</Heading>
+          {item.status === 'wip' && (
+            <Box bg='yellow.300' h='4em' p={5} m={5}>
+              <Text>
+                <Icon as={TiWarningOutline} />
+                このページは編集中です。
+              </Text>
+            </Box>
+          )}
           <Center h='3em'>
             <Divider orientation='horizontal' />
           </Center>
