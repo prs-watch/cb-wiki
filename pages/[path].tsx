@@ -26,8 +26,8 @@ export const getStaticPaths = async () => {
 type DynamicParams = {
   params: {
     path: string;
-  }
-}
+  };
+};
 
 // 静的リソース生成のためのプロパティ取得
 export const getStaticProps = async ({ params }: DynamicParams) => {
@@ -35,13 +35,20 @@ export const getStaticProps = async ({ params }: DynamicParams) => {
     'path',
     'title',
     'status',
+    'tags',
     'content',
   ]);
 
   return {
     props: {
       item: item,
-      markdowns: getAllMarkdowns(['path', 'title', 'status', 'content']),
+      markdowns: getAllMarkdowns([
+        'path',
+        'title',
+        'status',
+        'tags',
+        'content',
+      ]),
     },
   };
 };

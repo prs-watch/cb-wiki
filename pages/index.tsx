@@ -8,8 +8,8 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 // 静的リソース生成のためのプロパティ取得
 export const getStaticProps = async () => {
-  const item = getMarkdownContent('', ['path', 'title', 'status', 'content']);
-  const markdowns = getAllMarkdowns(['path', 'title', 'status', 'content']);
+  const item = getMarkdownContent('', ['path', 'title', 'status', 'tags', 'content']);
+  const markdowns = getAllMarkdowns(['path', 'title', 'status', 'tags', 'content']);
 
   return {
     props: {

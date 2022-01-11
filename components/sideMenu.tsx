@@ -60,9 +60,9 @@ const SideMenu = (props: Props) => {
             })
             // ステータス順でソート
             .sort((f, s) => {
-              if (f.status < s.status) return -1
-              if (f.status > s.status) return 1
-              return 0
+              if (f.status < s.status) return -1;
+              if (f.status > s.status) return 1;
+              return 0;
             })
             .map((markdown) => {
               return (
@@ -89,6 +89,29 @@ const SideMenu = (props: Props) => {
                 </ListItem>
               );
             })}
+        </List>
+      </Center>
+      <Center h='3em'>
+        <Divider orientation='horizontal' />
+      </Center>
+      <Center h='5em'>
+        <Heading size='md'>タグ一覧</Heading>
+      </Center>
+      <Center>
+        <List spacing={3}>
+          {props.markdowns.map((markdown) => markdown.tags).reduce((prev, curr) => prev.concat(curr)).map((tag) => {
+            return (
+              <ListItem key={tag}>
+                <NextLink href={`/tags/${tag}`} passHref>
+                  <Link>
+                    <Text textStyle='bold' color='blue.500' fontSize='sm'>
+                      {tag}
+                    </Text>
+                  </Link>
+                </NextLink>
+              </ListItem>
+            );
+          })}
         </List>
       </Center>
       <Center h='3em'>

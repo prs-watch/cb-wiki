@@ -37,6 +37,7 @@ export const getMarkdownContent = (path: string, fields: string[] = []) => {
     path: '',
     title: '',
     status: '',
+    tags: [],
     content: '',
   };
   fields.forEach((field) => {
@@ -44,7 +45,7 @@ export const getMarkdownContent = (path: string, fields: string[] = []) => {
       item.path = path;
     } else if (field === 'content') {
       item.content = content;
-    } else if (field === 'title' || field === 'status') {
+    } else if (field === 'title' || field === 'status' || field === 'tags') {
       item[field] = data[field];
     }
   });
