@@ -99,20 +99,18 @@ const SideMenu = (props: Props) => {
       </Center>
       <Center>
         <List spacing={3}>
-          {props.markdowns.map((markdown) => {
-            return markdown.tags.map((tag) => {
-              return (
-                <ListItem key={tag}>
-                  <NextLink href={`/tags/${tag}`} passHref>
-                    <Link>
-                      <Text textStyle='bold' color='blue.500' fontSize='sm'>
-                        {tag}
-                      </Text>
-                    </Link>
-                  </NextLink>
-                </ListItem>
-              );
-            });
+          {props.markdowns.map((markdown) => markdown.tags).reduce((prev, curr) => prev.concat(curr)).map((tag) => {
+            return (
+              <ListItem key={tag}>
+                <NextLink href={`/tags/${tag}`} passHref>
+                  <Link>
+                    <Text textStyle='bold' color='blue.500' fontSize='sm'>
+                      {tag}
+                    </Text>
+                  </Link>
+                </NextLink>
+              </ListItem>
+            );
           })}
         </List>
       </Center>
