@@ -26,7 +26,7 @@ const TagLayout = ({ tag, markdowns, fullMarkdowns }: Props) => {
     <>
       <Box></Box>
       <Center bg='white' h='3em'>
-        <Heading size='2xl'>{tag}</Heading>
+        <Heading size='2xl'>タグ：{tag}</Heading>
       </Center>
       <Center bg='white' h='3em'>
         <Divider orientation='horizontal' />
