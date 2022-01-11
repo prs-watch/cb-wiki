@@ -42,18 +42,30 @@ const TagLayout = ({ tag, markdowns, fullMarkdowns }: Props) => {
                 borderWidth={1}
                 borderRadius='lg'
                 overflow='hidden'
+                h='7em'
               >
-                <Heading size='md'>{markdown.title}</Heading>
+                <NextLink href={`/${markdown.path}`} passHref>
+                  <LinkOverlay>
+                    <Heading size='md' p={2}>
+                      {markdown.title}
+                    </Heading>
+                    <Text isTruncated p={2}>
+                      {markdown.content}
+                    </Text>
+                  </LinkOverlay>
+                </NextLink>
                 {markdown.tags.map((tag) => {
                   return (
-                    <Badge
-                      key={tag}
-                      borderRadius='full'
-                      px='2'
-                      colorScheme='teal'
-                    >
-                      {tag}
-                    </Badge>
+                    <NextLink key={tag} href={`/tags/${tag}`} passHref>
+                      <Badge
+                        variant='outline'
+                        ml='1'
+                        borderRadius='lg'
+                        colorScheme='green'
+                      >
+                        {tag}
+                      </Badge>
+                    </NextLink>
                   );
                 })}
               </Box>
