@@ -67,7 +67,7 @@ const SideMenu = (props: Props) => {
             .map((markdown) => {
               return (
                 <ListItem key={markdown.path}>
-                  <NextLink href={markdown.path} passHref>
+                  <NextLink href={`/${markdown.path}`} passHref>
                     <Link>
                       <Text textStyle='bold' fontSize='sm'>
                         <ListIcon

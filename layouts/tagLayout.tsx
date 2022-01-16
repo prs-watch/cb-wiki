@@ -7,7 +7,7 @@ import {
   Box,
   Badge,
   Text,
-  LinkOverlay,
+  Link,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { isMobileOnly } from 'react-device-detect';
@@ -45,14 +45,14 @@ const TagLayout = ({ tag, markdowns, fullMarkdowns }: Props) => {
                 h='7em'
               >
                 <NextLink href={`/${markdown.path}`} passHref>
-                  <LinkOverlay>
+                  <Link>
                     <Heading size='md' p={2}>
                       {markdown.title}
                     </Heading>
                     <Text isTruncated p={2}>
                       {markdown.content}
                     </Text>
-                  </LinkOverlay>
+                  </Link>
                 </NextLink>
                 {markdown.tags.map((tag) => {
                   return (
@@ -101,14 +101,14 @@ const TagLayout = ({ tag, markdowns, fullMarkdowns }: Props) => {
                     h='7em'
                   >
                     <NextLink href={`/${markdown.path}`} passHref>
-                      <LinkOverlay>
+                      <Link>
                         <Heading size='md' p={2}>
                           {markdown.title}
                         </Heading>
                         <Text isTruncated p={2}>
                           {markdown.content}
                         </Text>
-                      </LinkOverlay>
+                      </Link>
                     </NextLink>
                     {markdown.tags.map((tag) => {
                       return (
