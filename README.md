@@ -23,6 +23,14 @@ Please edit via `GitHub` features (create branch, and pull request).
   - Please write your contents by markdown (`.md` file).
   - Please put your markdown under `contents` directory. `contents/${path name you like}/index.md`
 
+#### :bird: Tips: Embedding Tweet
+
+You can embed Twitter's tweet by using code syntax with `twitter` class name.
+
+```twitter
+${tweetID}
+```
+
 ## :mailbox: Contact
 
 - [Twitter](https://twitter.com/hctaw_srp)
